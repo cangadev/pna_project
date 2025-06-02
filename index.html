@@ -1,0 +1,1115 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PNA - Sistema de Documentos Perdidos</title>
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/brands.min.css" integrity="sha512-58P9Hy7II0YeXLv+iFiLCv1rtLW47xmiRpC1oFafeKNShp8V5bKV/ciVtYqbk2YfxXQMt58DjNfkXFOn62xE+g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+   
+</head>
+<style>
+            /* Reset e estilos gerais */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: #f5f5f5;
+            overflow-x: hidden;
+        }
+
+        /* Container principal */
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        .nav-button{
+            background-color: #e0a800;
+        }
+                
+        a{
+            text-decoration: none;
+            color: white;
+        }
+        /* Cabeçalho */
+        header {
+            background-color:#003366;
+            color: white;
+            padding: 1rem 0;
+            box-shadow: var(--box-shadow);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo img {
+            height: 50px;
+            margin-right: 10px;
+        }
+
+        .logo h1 {
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
+
+        /* Navegação */
+        nav {
+            display: flex;
+            align-items: center;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin-left: 1.5rem;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color:  #ffc107;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* Seção Hero */
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.878), rgba(0, 0, 0, 0.6)), url('./image/logo.jpg');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 5rem 0;
+            text-align: center;
+        }
+
+        .hero h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto 2rem;
+        }
+
+        /* Botões */
+        .btn {
+            display: inline-block;
+            padding: 0.8rem 1.5rem;
+            border-radius: var(--border-radius);
+            text-decoration: none;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            border: none;
+        }
+
+        .btn-primary {
+            background-color:  #003366;
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background-color:  #0056b3;
+        }
+
+        .btn-accent {
+            background-color:  #ffc107;
+            color:  #343a40;
+        }
+
+        .btn-accent:hover {
+            background-color: #e0a800;
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid white;
+            color: white;
+        }
+
+        .btn-outline:hover {
+            background-color: white;
+            color: #003366;
+        }
+
+        /* Seções */
+        .section {
+            padding: 4rem 0;
+        }
+
+          /* Features Section */
+        .features {
+            padding: 3rem 0;
+            background-color: #ecf0f1;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 2rem;
+        }
+
+        .feature-card {
+            background-color: white;
+            border-radius: 8px;
+            padding: 2rem;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .feature-card i {
+            font-size: 3rem;
+            color: #3498db;
+            margin-bottom: 1rem;
+        }
+
+        .feature-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: #2c3e50;
+        }
+
+        /* Call to Action */
+        .cta {
+            padding: 4rem 0;
+            background: linear-gradient(to right,  #1a5276,#2980b9);
+            color: white;
+            text-align: center;
+        }
+
+        .cta h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .cta p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 2rem;
+        }
+        samp
+    
+        /* Seções de Conteúdo */
+        .section {
+            padding: 3rem 0;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .section-header h2 {
+            font-size: 2rem;
+            color: #1a1a64;
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+
+        .section-header h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background-color: #ffcc00;
+        }
+
+        /* Cards */
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .card {
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+        }
+
+        .card-img {
+            height: 200px;
+            overflow: hidden;
+        }
+
+        .card-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+
+        .card:hover .card-img img {
+            transform: scale(1.05);
+        }
+
+        .card-content {
+            padding: 1.5rem;
+        }
+
+        .card-content h3 {
+            color: #1a1a64;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Rodapé */
+       /* Footer */
+footer {
+    background-color:  #003366;
+    color: white;
+    padding: 60px 0 20px;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+.footer-col h3 {
+    margin-bottom: 20px;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.footer-col h3::after {
+    content: '';
+    position: absolute;
+    width: 50px;
+    height: 2px;
+    background-color:  #ffc107;
+    bottom: 0;
+    left: 0;
+}
+
+.footer-col ul {
+    list-style: none;
+}
+
+.footer-col ul li {
+    margin-bottom: 10px;
+}
+
+.footer-col ul li a {
+    color: #ddd;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-col ul li a:hover {
+    color: white;
+}
+
+.contact-list li {
+    display: flex;
+    align-items: center;
+}
+
+.social-links {
+    display: flex;
+    gap: 15px;
+}
+
+.social-link {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s ease;
+}
+
+.social-link:hover {
+    background-color:  #ffc107;
+}
+
+.footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 20px;
+    text-align: center;
+}
+
+/* Page Transitions */
+[id$="-page"] {
+    display: none;
+    animation: fadeIn 0.5s;
+}
+
+[id$="-page"].active {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Responsive Styles */
+@media (max-width: 992px) {
+    .hero h2 {
+        font-size: 2rem;
+    }
+    
+    .hero p {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 768px) {
+    nav ul {
+        display: none;
+    }
+    
+    .sidebar-btn {
+        display: block;
+    }
+    
+    .hero {
+        padding: 60px 0;
+    }
+    
+    .section {
+        padding: 40px 0;
+    }
+    
+    .grid, .stats-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 576px) {
+    .logo h1 {
+        font-size: 1.2rem;
+    }
+    
+    .hero h2 {
+        font-size: 1.5rem;
+    }
+    
+    .hero .btn {
+        margin: 5px;
+        display: block;
+        width: 100%;
+    }
+    
+    .document-type {
+        flex-direction: column;
+    }
+    
+    .tabs {
+        flex-direction: column;
+    }
+    
+    .tab-btn {
+        width: 100%;
+        text-align: center;
+    }
+       
+
+      /* Features Section */
+        .features {
+            padding: 3rem 0;
+            background-color: #ecf0f1;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 2rem;
+        }
+
+        .feature-card {
+            background-color: white;
+            border-radius: 8px;
+            padding: 2rem;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .feature-card i {
+            font-size: 3rem;
+            color: #3498db;
+            margin-bottom: 1rem;
+        }
+
+        .feature-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: #2c3e50;
+        }
+
+}
+
+
+        /* Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 2000;
+            overflow: auto;
+        }
+
+        .modal-content {
+            background-color: white;
+            margin: 2rem auto;
+            padding: 2rem;
+            border-radius: var(--border-radius);
+            max-width: 600px;
+            position: relative;
+            animation: modalFadeIn 0.3s;
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        @keyframes modalFadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Estilos específicos de página */
+        
+        /* Dashboard */
+        .dashboard {
+            display: grid;
+            grid-template-columns: 1fr 3fr;
+            gap: 1.5rem;
+        }
+
+        .dashboard-sidebar {
+            background-color: white;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            padding: 1.5rem;
+            height: fit-content;
+        }
+
+        .dashboard-menu {
+            list-style: none;
+        }
+
+        .dashboard-menu li {
+            margin-bottom: 0.5rem;
+        }
+
+        .dashboard-menu a {
+            display: block;
+            padding: 0.75rem;
+            text-decoration: none;
+            color:  #343a40;
+            border-radius: var(--border-radius);
+            transition: all 0.2s;
+        }
+
+        .dashboard-menu a:hover, .dashboard-menu a.active {
+            background-color:#f8f9fa;
+            color:  #003366;
+        }
+
+        .dashboard-menu a.active {
+            border-left: 3px solid  #003366;
+            font-weight: 600;
+        }
+
+        .dashboard-main {
+            background-color: white;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            padding: 1.5rem;
+        }
+
+        .profile-image {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 1rem;
+        }
+
+        /* Estatísticas */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .stat-card {
+            background-color: white;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            padding: 1.5rem;
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 2rem;
+            font-weight: 700;
+            color:  #003366;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-title {
+            color: var(--gray-color);
+            font-size: 0.9rem;
+        }
+
+        /* Estilos responsivos */
+        @media (max-width: 992px) {
+            .dashboard {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            /* Navegação */
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            nav ul {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background-color: #003366;
+                flex-direction: column;
+                padding: 1rem 0;
+            }
+
+            nav ul.show {
+                display: flex;
+            }
+
+            nav ul li {
+                margin: 0;
+                text-align: center;
+                padding: 0.5rem 0;
+            }
+
+            /* Hero */
+            .hero h2 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            /* Seções */
+            .section {
+                padding: 3rem 0;
+            }
+
+            .section-title h2 {
+                font-size: 1.8rem;
+            }
+        }
+
+        @media (max-width: 576px) {
+            /* Logo */
+            .logo h1 {
+                font-size: 1.2rem;
+            }
+
+            /* Hero */
+            .hero {
+                padding: 3rem 0;
+            }
+
+            .hero h2 {
+                font-size: 1.8rem;
+            }
+
+            /* Botões */
+            .btn {
+                padding: 0.7rem 1.2rem;
+                font-size: 0.9rem;
+            }
+
+            /* Formulários */
+            .form-control {
+                padding: 0.7rem;
+            }
+
+            /* Grids */
+            .grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Estilos específicos para páginas */
+        
+        /* Página de login/registro */
+        .auth-container {
+            min-height: 80vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem 0;
+        }
+
+        .auth-form {
+            background-color: white;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            padding: 2rem;
+            width: 100%;
+            max-width: 450px;
+        }
+
+        .auth-tabs {
+            display: flex;
+            margin-bottom: 1.5rem;
+            border-bottom: 1px solid #dee2e6;
+        }
+
+        .auth-tab {
+            padding: 0.75rem 1rem;
+            cursor: pointer;
+            font-weight: 500;
+            color:  #6c757d;
+            border-bottom: 2px solid transparent;
+            transition: all 0.3s;
+        }
+
+        .auth-tab.active {
+            color:  #003366;
+            border-bottom-color:  #003366;
+        }
+
+        /* Tela de cadastramento de documentos */
+        .document-type {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin-bottom: 1.5rem;
+        }
+
+        .doc-type-btn {
+            background-color: white;
+            border: 1px solid #ced4da;
+            border-radius: var(--border-radius);
+            padding: 0.5rem 1rem;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .doc-type-btn:hover {
+            border-color:  #003366;
+        }
+
+        .doc-type-btn.active {
+            background-color:  #003366;
+            color: white;
+            border-color:  #003366;
+        }
+
+        .file-upload {
+            border: 2px dashed #ced4da;
+            border-radius: var(--border-radius);
+            padding: 2rem;
+            text-align: center;
+            margin-bottom: 1.5rem;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .file-upload:hover {
+            border-color: #003366;
+        }
+
+        .file-upload i {
+            font-size: 2rem;
+            color:  #6c757d;
+            margin-bottom: 1rem;
+        }
+
+        /* Variáveis específicas para controle de páginas */
+        #home-page, #register-doc-page, #my-account-page, #login-page {
+            display: none;
+        }
+
+        #home-page.active, #register-doc-page.active, #my-account-page.active, #login-page.active {
+            display: block;
+        }
+
+        /* Abas da dashboard */
+        .dashboard-tab {
+            display: none;
+        }
+
+        .dashboard-tab.active {
+            display: block;
+        }
+
+        
+
+/* Estilos para o menu lateral */
+.sidebar {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 2000;
+    top: 0;
+    left: 0;
+    background-color: #003366;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+    box-shadow: 2px 0 5px rgba(0,0,0,0.2);
+}
+
+.sidebar a {
+    padding: 15px 25px;
+    text-decoration: none;
+    font-size: 18px;
+    color: white;
+    display: block;
+    transition: 0.3s;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.sidebar a:hover {
+    color: #ffc107;
+    background-color: rgba(255,255,255,0.1);
+}
+
+.sidebar .close-btn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+    border-bottom: none;
+}
+
+.sidebar-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 1999;
+}
+
+.sidebar-btn {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    margin-right: 15px;
+}
+
+/* Adicione esta classe para mover o conteúdo quando o menu abre */
+.content-shift {
+    transition: margin-left 0.5s;
+}
+
+@media screen and (max-height: 450px) {
+    .sidebar {padding-top: 15px;}
+    .sidebar a {font-size: 18px;}
+}
+
+/* Substitua o JavaScript existente por este código mais completo */
+    
+</style>
+<body>
+    <body>
+        <!-- Menu Lateral -->
+        <div id="sidebar" class="sidebar">
+            <a href="javascript:void(0)" class="close-btn" onclick="closeNav()">&times;</a>
+            <a href="#" class="nav-link" data-page="home-page">Início</a>
+            <a href="./registrarDocs/index.html" class="nav-link" data-page="register-doc-page">Registar Documentos</a>
+            <a href="#" class="nav-link" data-page="my-account-page">Dashboard</a>
+            <a href="#" class="nav-link" data-page="login-page">Configurações</a>
+            <a href="#" class="nav-link" data-page="login-page">Sair</a>
+        </div>
+        
+        <!-- Overlay para fechar o menu quando clicar fora -->
+        <div id="sidebar-overlay" class="sidebar-overlay"></div>
+        
+        <!-- Restante do código... -->
+    
+  <!-- Overlay para fechar o menu quando clicar fora -->
+<div id="sidebar-overlay" class="sidebar-overlay"></div>
+    <!-- Cabeçalho -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <button class="sidebar-btn" onclick="openNav()">&#9776;</button>
+                <img src="./image/Logo1.png" alt="Logo PNA">
+                <h1>PNA - Documentos Perdidos</h1>
+            </div>
+            <nav>
+                <ul id="nav-menu">
+                    <li><a href="#" class="nav-link" data-page="home-page">Início</a></li>
+                    <li><a href="./registrarDocs/index.html">Registar Documentos</a></li>
+                    <li><a href="./docsPerdidos/index.php">Documentos Perdidos</li>
+                    <li><a href="./sobre/index.html">Sobre Nós</li>
+                    <li><a href="./Login/Login.html">login</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Página Inicial -->
+    <div id="home-page" class="active">
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container">
+                <h2>Recupere Seus Documentos Perdidos</h2>
+                <p>Sistema nacional de gestão de documentos perdidos da Polícia Nacional de Angola. Registre seus documentos perdidos ou encontrados e ajude a comunidade.</p>
+                <div>
+                    <a href="./registrarDocs/index.html" class="btn btn-accent nav-link" data-page="register-doc-page">Registar Documento</a>
+                    <a href="./docsPerdidos/index.php" class="btn btn-outline">Consultar Documentos</a>
+                </div>
+            </div>
+        </section>
+  <!-- Features Section -->
+    <section class="features">
+        <div class="container">
+            <h2>Funcionalidades do Sistema</h2>
+            <p>Conheça as principais funcionalidades do Sistema Nacional de Documentos Perdidos.</p>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <i class="fas fa-search"></i>
+                    <h3>Busca Rápida</h3>
+                    <p>Localize documentos perdidos rapidamente através do nosso sistema de busca avançada.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-bell"></i>
+                    <h3>Notificações</h3>
+                    <p>Receba atualizações em tempo real sobre o status do seu documento perdido.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-chart-line"></i>
+                    <h3>Estatísticas</h3>
+                    <p>Acesse dados estatísticos detalhados sobre documentos perdidos em todo o país.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <h3>Mapeamento</h3>
+                    <p>Visualize a distribuição geográfica de documentos perdidos em Angola.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-mobile-alt"></i>
+                    <h3>Acesso Móvel</h3>
+                    <p>Utilize o sistema através do seu dispositivo móvel de qualquer lugar.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-shield-alt"></i>
+                    <h3>Segurança</h3>
+                    <p>Seus dados são protegidos com as mais avançadas tecnologias de segurança.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+     <!-- Seção Sobre -->
+    <section id="sobre" class="section" style="background-color: #eef2f7;">
+        <div class="container">
+            <div class="section-header">
+                <h2>Sobre o Sistema</h2>
+                <p>Conheça mais sobre o nosso serviço de documentos perdidos</p>
+            </div>
+
+            <div class="cards">
+                <div class="card">
+                    <div class="card-img">
+                        <img src="./image/gouls.jpg" alt="Missão">
+                    </div>
+                    <div class="card-content">
+                        <h3>Nossa Missão</h3>
+                        <p>Facilitar a recuperação de documentos perdidos e promover a cidadania responsável, garantindo um processo eficiente e seguro para todos os cidadãos angolanos.</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-img">
+                        <img src="./image/howrk.jpg" alt="Como Funciona">
+                    </div>
+                    <div class="card-content">
+                        <h3>Como Funciona</h3>
+                        <p>O nosso sistema permite que qualquer pessoa registre documentos perdidos ou encontrados. Os dados são armazenados de forma segura e podem ser pesquisados por cidadãos e agentes da PNA.</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-img">
+                        <img src="./image/security.jpg" alt="Segurança">
+                    </div>
+                    <div class="card-content">
+                        <h3>Segurança</h3>
+                        <p>Garantimos a proteção dos dados pessoais em conformidade com as leis de privacidade. Apenas informações essenciais são exibidas publicamente para facilitar a recuperação dos documentos.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Rodapé -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3>PNA - Documentos Perdidos</h3>
+                    <p>Sistema nacional de gestão de documentos perdidos da Polícia Nacional de Angola.</p>
+                </div>
+                <div class="footer-col">
+                    <h3>Links Rápidos</h3>
+                    <ul>
+                        <li><a href="#" class="nav-link" data-page="home-page">Página Inicial</a></li>
+                        <li><a href="#" class="nav-link" data-page="register-doc-page">Registar Documento</a></li>
+                        <li><a href="#">Consultar Documentos</a></li>
+                        <li><a href="#" class="nav-link" data-page="my-account-page">Minha Conta</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Contactos</h3>
+                    <ul class="contact-list">
+                        <li><i class="icon-phone"></i> +244 222 123 456</li>
+                        <li><i class="icon-email"></i> documentos@pna.gov.ao</li>
+                        <li><i class="icon-location"></i> Rua da Polícia Nacional, Luanda, Angola</li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Redes Sociais</h3>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="icon-facebook"></i></a>
+                        <a href="#" class="social-link"><i class="icon-twitter"></i></a>
+                        <a href="#" class="social-link"><i class="icon-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Polícia Nacional
+            </div>
+            <script>
+// Função para abrir o menu lateral
+function openNav() {
+    document.getElementById("sidebar").style.width = "250px";
+    document.getElementById("sidebar-overlay").style.display = "block";
+    document.body.style.overflow = "hidden"; // Previne rolagem quando menu está aberto
+}
+
+// Função para fechar o menu lateral
+function closeNav() {
+    document.getElementById("sidebar").style.width = "0";
+    document.getElementById("sidebar-overlay").style.display = "none";
+    document.body.style.overflow = ""; // Restaura rolagem
+}
+
+// Quando o documento estiver carregado
+document.addEventListener("DOMContentLoaded", function() {
+    // Adicionar evento para fechar o menu ao clicar no overlay
+    document.getElementById("sidebar-overlay").addEventListener("click", closeNav);
+    
+    // Adicionar eventos para os links do menu lateral
+    const navLinks = document.querySelectorAll(".nav-link");
+    navLinks.forEach(function(link) {
+        link.addEventListener("click", function(event) {
+            // Previne o comportamento padrão do link
+            event.preventDefault();
+            
+            // Obtém a página alvo
+            const targetPage = this.getAttribute("data-page");
+            
+            // Remove a classe 'active' de todas as páginas
+            document.querySelectorAll("[id$='-page']").forEach(function(page) {
+                page.classList.remove("active");
+            });
+            
+            // Adiciona a classe 'active' à página alvo
+            document.getElementById(targetPage).classList.add("active");
+            
+            // Fecha o menu lateral após a navegação
+            closeNav();
+        });
+    });
+    
+    // Verificação de responsividade
+    function checkWidth() {
+        if (window.innerWidth <= 768) {
+            closeNav(); // Em telas menores, sempre começa com o menu fechado
+        }
+    }
+    
+    // Verificar tamanho da tela ao carregar e redimensionar
+    checkWidth();
+    window.addEventListener("resize", checkWidth);
+});
+            </script>

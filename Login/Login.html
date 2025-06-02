@@ -1,0 +1,51 @@
+    <!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Sistema de Documentos Perdidos | PNA</title>
+    <link rel="stylesheet" href="Login.css">
+    <script src="Login.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="info-side">
+            <div class="info-content">
+                <div class="logo">PNA</div>
+                <h1>Sistema de Documentos Perdidos</h1>
+                <p>Plataforma oficial da Polícia Nacional de Angola para cadastramento e recuperação de documentos pessoais perdidos na via pública.</p>
+                <p>Ajudamos a reunir pessoas com seus documentos perdidos, facilitando a recuperação e devolvendo-os aos seus legítimos proprietários.</p>
+            </div>
+        </div>
+        <div class="login-side">
+            <div class="login-header">
+                <h2>Bem-vindo(a)</h2>
+                <p>Essa área pertence apenas a entidades credenciadas</p>
+            </div>
+            <form action="./login.php" method="post" id="login-form">
+                <div class="form-group">
+                    <label for="username">Nome de Usuário / Email</label>
+                    <input type="text" name="username" id="username" placeholder="Digite seu nome de usuário ou email">
+                    <div class="error-message" id="username-error">Por favor, digite um nome de usuário válido</div>
+                </div>
+                <div class="form-group">
+                    <label for="password">Senha</label>
+                    <input type="password" name="password" id="password" placeholder="Digite sua senha">
+                    <div class="error-message" id="password-error">Por favor, digite sua senha</div>
+                </div>
+                <div class="options">
+                    <div class="remember-me">
+                        <input type="checkbox" id="remember">
+                        <label for="remember">Lembrar-me</label>
+                    </div>
+                    <a href="../recuperarSenha/esqueceu.html" class="forgot-password">Esqueceu a senha?</a>
+                </div>
+                <button type="submit" class="login-btn">Entrar</button>
+                <div class="register-link">
+                    Não tem uma conta? <a href="Cadastrar-se.html">Cadastre-se</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

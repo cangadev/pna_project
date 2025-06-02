@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registrar Documento Perdido</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="Registrar Documento Perdidos.js"></script>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Sistema de Registro de Documentos Perdidos</h1>
+            <p>Recupere seus documentos com nossa ajuda</p>
+        </div>
+    </header>
+    
+    <nav>
+        <div class="container">
+            <ul>
+                <li><a href="../index.html">Início</a></li>
+                <li><a href="#registro">Registrar</a></li>
+                <li><a href="#informacoes">Informações</a></li>
+                <li><a href="#contato">Contato</a></li>
+            </ul>
+        </div>
+    </nav>
+    
+    <main class="container">
+        <section id="inicio" class="hero">
+            <h2>Perdeu seu documento?</h2>
+            <p>Registre imediatamente no nosso sistema para aumentar as chances de recuperá-lo. Nosso sistema conecta pessoas que encontraram documentos com seus verdadeiros donos.</p>
+            <a href="#registro" class="btn">Registrar Agora</a>
+        </section>
+        
+        <section id="registro" class="registro-form">
+            <h3>Registrar Documento Perdido</h3>
+            <form action="postdocs.php" method="post" id="documentoForm" enctype="multipart/form-data">
+                <div class="form-row">
+                    <div class="form-col">
+                        <div class="form-group">
+                            <label for="tipoDocumento">Nome do Documento*</label>
+                            <input type="text" name="tipodoc" placeholder="Ex: Bilhete de identidade">
+                        </div>
+                    </div>
+                    <div class="form-col">
+                        <div class="form-group">
+                            <label for="numeroDocumento">Imagem do documento</label>
+                            <input type="file" name="image" required>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-col">
+                        <div class="form-group">
+                            <label for="nomeCompleto">Seu nome completo</label>
+                            <input type="text" name="nome" id="nomeCompleto" required>
+                        </div>
+                    </div>
+                    <div class="form-col">
+                        <div class="form-group">
+                            <label for="dataNascimento">Data de Nascimento</label>
+                            <input type="date" name="datnasc" id="dataNascimento">
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-col">
+                        <div class="form-group">
+                            <label for="email">E-mail para Contato</label>
+                            <input type="email" name="email" id="email" required>
+                        </div>
+                    </div>
+                    <div class="form-col">
+                        <div class="form-group">
+                            <label for="telefone">Telefone para Contacto</label>
+                            <input type="tel" name="telefone" id="telefone" required>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="localPerda">Local da Perda (seja o mais específico possível)</label>
+                    <input type="text" name="local" id="localPerda" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="dataPerda">Data Aproximada da Perda</label>
+                    <input type="date" name="dat" id="dataPerda" required>
+                </div>
+            
+                <div class="form-group">
+                    <label for="detalhes">Detalhes Adicionais</label>
+                    <textarea name="detalhe" id="detalhes" placeholder="Descreva circunstâncias da perda, características do documento, etc."></textarea>
+                </div>
+                
+                <div class="btn-container">
+                    <button type="submit" class="btn">Registrar</button>
+                </div>
+                
+                <div class="success-message" id="successMessage">
+                    <p>Documento registrado com sucesso! Em caso de localização, você será notificado pelos contatos informados.</p>
+                </div>
+            </form>
+        </section>
+        
+        <section id="informacoes" class="info-section">
+            <h3>Informações Importantes</h3>
+            <p>O registro do seu documento perdido em nosso sistema é uma medida adicional para aumentar as chances de recuperação. Recomendamos também:</p>
+            
+            <div class="info-cards">
+                <div class="info-card">
+                    <h4>Registre um Boletim de Ocorrência</h4>
+                    <p>O B.O. é um procedimento oficial importante para documentar a perda e evitar uso indevido dos seus documentos.</p>
+                </div>
+                
+                <div class="info-card">
+                    <h4>Contate Órgãos Emissores</h4>
+                    <p>Entre em contato com os órgãos responsáveis pela emissão dos documentos para solicitar a segunda via.</p>
+                </div>
+                
+                <div class="info-card">
+                    <h4>Monitoramento de Crédito</h4>
+                    <p>Considere monitorar seu CPF para detectar tentativas de fraude ou uso indevido dos seus dados.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Sistema de Registro de Documentos Perdidos</p>
+            <p>Este serviço é gratuito e visa ajudar cidadãos a recuperarem seus documentos perdidos.</p>
+        </div>
+    </footer>
+</body>
+</html>
